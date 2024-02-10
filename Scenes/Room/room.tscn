@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://be5aatsvni5a2"]
+
+[ext_resource type="Script" path="res://Scenes/Room/room.gd" id="1_a4pig"]
+[ext_resource type="PackedScene" uid="uid://c87js4tsm8wg8" path="res://Scenes/Characters/Luke/luke.tscn" id="1_sy0co"]
+[ext_resource type="Script" path="res://Scripts/dialogueHandler.gd" id="2_05is7"]
+[ext_resource type="PackedScene" uid="uid://bfdp68gtx8j6q" path="res://Scenes/Characters/Willie/willie.tscn" id="2_13rk6"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_a4pig")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="DialogueHandler" type="Node" parent="."]
+script = ExtResource("2_05is7")
+
+[node name="Luke" parent="DialogueHandler" instance=ExtResource("1_sy0co")]
+position = Vector2(193, 404)
+
+[node name="Willie" parent="DialogueHandler" instance=ExtResource("2_13rk6")]
+position = Vector2(663, 338)
+
+[node name="ItemHandler" type="Node" parent="."]

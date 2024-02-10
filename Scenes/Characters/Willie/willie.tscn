@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfdp68gtx8j6q"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Willie/willie.gd" id="1_lk6ba"]
+[ext_resource type="Script" path="res://Scripts/clickable.gd" id="1_yys5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej4pk"]
+size = Vector2(316, 347.5)
+
+[node name="Willie" type="Node2D"]
+script = ExtResource("1_lk6ba")
+
+[node name="ClickableArea" type="Area2D" parent="."]
+script = ExtResource("1_yys5l")
+
+[node name="ClickZone" type="CollisionShape2D" parent="ClickableArea"]
+shape = SubResource("RectangleShape2D_ej4pk")
+debug_color = Color(0.658824, 0.513726, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="ClickableArea"]
+
+[connection signal="area_clicked" from="ClickableArea" to="." method="_on_clickable_area_area_clicked"]
+[connection signal="mouse_entered" from="ClickableArea" to="ClickableArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ClickableArea" to="ClickableArea" method="_on_mouse_exited"]
