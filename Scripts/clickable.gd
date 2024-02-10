@@ -1,12 +1,13 @@
 extends Area2D
-
+class_name ClickableArea2D
 
 var mouse_inside = false
 signal area_clicked
 
+
 func _on_mouse_entered():
 	mouse_inside = true
-	modulate = Color(0.5,0.5,0.5,1.0)
+	modulate = Color(1.5,1.5,1.5,1.0)
 
 
 func _on_mouse_exited():
