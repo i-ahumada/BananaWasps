@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0p4tnwg83q34"]
+[gd_scene load_steps=12 format=3 uid="uid://b0p4tnwg83q34"]
 
 [ext_resource type="Script" path="res://Scenes/Room/room.gd" id="1_a4pig"]
 [ext_resource type="PackedScene" uid="uid://c87js4tsm8wg8" path="res://Scenes/Characters/Luke/luke.tscn" id="1_sy0co"]
@@ -7,9 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cshycae86u036" path="res://Scenes/Items/item.tscn" id="5_o62i5"]
 [ext_resource type="Script" path="res://Scripts/itemPickupHandler.gd" id="5_yxnyf"]
 [ext_resource type="Texture2D" uid="uid://3xh5u0n6pqi0" path="res://Sprites/Items/Glass.png" id="6_uuxsi"]
+[ext_resource type="PackedScene" uid="uid://0owulfvv4b26" path="res://Scenes/Inventory/inventory.tscn" id="8_ef5g1"]
+[ext_resource type="Script" path="res://Scripts/inventoryShow.gd" id="8_rkvx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u4is"]
 size = Vector2(32, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m78hd"]
+size = Vector2(1030, 160)
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_a4pig")
@@ -40,19 +45,38 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_8u4is")
 
 [node name="Keys" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
-position = Vector2(963, 341)
+position = Vector2(946, 82)
 sprite = ExtResource("6_uuxsi")
-item_name = "Glass"
+item_name = "Keys"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Keys"]
 shape = SubResource("RectangleShape2D_8u4is")
 
-[node name="Glass3" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
-position = Vector2(963, 341)
+[node name="Money" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
+position = Vector2(269, 76)
 sprite = ExtResource("6_uuxsi")
-item_name = "Glass"
+item_name = "Money"
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Glass3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Money"]
 shape = SubResource("RectangleShape2D_8u4is")
+
+[node name="InventoryShowArea2D" type="Area2D" parent="."]
+position = Vector2(575, 479)
+script = ExtResource("8_rkvx0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryShowArea2D"]
+position = Vector2(-1, -525)
+shape = SubResource("RectangleShape2D_m78hd")
+
+[node name="Inventory" parent="InventoryShowArea2D" instance=ExtResource("8_ef5g1")]
+offset_left = -576.0
+offset_top = -577.0
+offset_right = 576.0
+offset_bottom = 71.0
+
+[connection signal="item_pickup_handle" from="ItemPickupHandler" to="InventoryShowArea2D/Inventory" method="_on_item_pickup_handler_item_pickup_handle"]
+[connection signal="mouse_entered" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_exited"]

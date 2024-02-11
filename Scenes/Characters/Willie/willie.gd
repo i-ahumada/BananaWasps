@@ -1,17 +1,9 @@
 extends Node2D
 
 
-signal dialogue(text: String)
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+signal dialogue(pathToDialogue: String)
 
 func _on_clickable_area_area_clicked():
-	dialogue.emit("Willie")
+	get_parent().get_parent().get_node("InventoryShowArea2D").get_child(1).get_items()
+	
+	dialogue.emit("")

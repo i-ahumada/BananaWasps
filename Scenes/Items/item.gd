@@ -12,3 +12,4 @@ func _ready():
 
 func _on_area_clicked():
 	item_pickup.emit(item_name, sprite)
+	queue_free()

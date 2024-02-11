@@ -13,3 +13,7 @@ config_version=5
 config/name="Godot Wild Jam #66"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
