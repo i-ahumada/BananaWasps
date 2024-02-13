@@ -1,0 +1,15 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "Pleasure doing business.",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Luke",
+			"Text": "[i][color=lightgrey]... Just a bit more money and Susan might take me back [/color][/i]",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "-1"
+}

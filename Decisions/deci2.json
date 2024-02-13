@@ -1,0 +1,22 @@
+{ 
+	"0": {
+		"Text": "You're such a pain. (hands him money)",
+		"Text_Code": "5",
+		"Restraint": "Money"
+	},
+	"1": {
+		"Text": "This is exactly why Susan left you.",
+		"Text_Code": "6",
+		"Restraint": ""
+	},
+	"2": {
+		"Text": "What do you mean it ain't cheap?",
+		"Text_Code": "7",
+		"Restraint": ""
+	},
+	"3": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

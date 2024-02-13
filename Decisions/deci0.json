@@ -5,6 +5,11 @@
 		"Restraint": "Glass"
 	},
 	"1": {
+		"Text": "Gun?",
+		"Text_Code": "2",
+		"Restraint": "Gun"
+	},
+	"2": {
 		"Text": "Close",
 		"Text_Code": "-1",
 		"Restraint": ""

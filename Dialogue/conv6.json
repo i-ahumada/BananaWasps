@@ -1,0 +1,20 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "That's so dumb.",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Luke",
+			"Text": "...",
+			"Emotion": "silent"
+		},
+		"2": {
+			"Name": "Luke",
+			"Text": "[b]SHUT UP I'M NOT CRYING![/b]",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "-1"
+}

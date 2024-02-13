@@ -1,0 +1,20 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "Sure, I have some water here",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Luke",
+			"Text": "...",
+			"Emotion": "silent"
+		},
+		"2": {
+			"Name": "Luke",
+			"Text": "You know, water ain't cheap. Why should I give you?",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "2"
+}

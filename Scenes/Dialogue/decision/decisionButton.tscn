@@ -5,6 +5,7 @@
 [node name="decisionButton" type="Button"]
 offset_right = 502.0
 offset_bottom = 31.0
+theme_override_font_sizes/font_size = 16
 text = "???"
 script = ExtResource("1_y5444")
 

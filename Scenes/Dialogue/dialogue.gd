@@ -23,6 +23,8 @@ func decision_dialogue(dialogue_code: String):
 		decision_instance.connect("finished_decision", text_dialogue)
 		decision_instance.position = position_dialogues
 		add_child(decision_instance)
+	elif (dialogue_code != "-10"):
+		pass
 
 
 func _on_dialogue_handler_dialogue_sender(code):

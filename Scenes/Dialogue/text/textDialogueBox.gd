@@ -64,7 +64,6 @@ func getDialog() -> Dictionary:
 		return {}
 	var f = FileAccess.open(dialogues_root + dialogue_key + ".json", FileAccess.READ)
 	
-	var json_info = JSON.new()
 	var dialog_info = JSON.parse_string(f.get_as_text())
 	
 	if typeof(dialog_info) == TYPE_DICTIONARY:

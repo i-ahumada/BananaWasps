@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0p4tnwg83q34"]
+[gd_scene load_steps=13 format=3 uid="uid://b0p4tnwg83q34"]
 
 [ext_resource type="PackedScene" uid="uid://c87js4tsm8wg8" path="res://Scenes/Characters/Luke/luke.tscn" id="1_sy0co"]
 [ext_resource type="Script" path="res://Scripts/dialogueHandler.gd" id="2_05is7"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0owulfvv4b26" path="res://Scenes/Inventory/inventory.tscn" id="8_ef5g1"]
 [ext_resource type="Script" path="res://Scripts/inventoryShow.gd" id="8_rkvx0"]
 [ext_resource type="PackedScene" uid="uid://cvpeipml2mj2d" path="res://Scenes/Dialogue/dialogue.tscn" id="10_0xvxp"]
+[ext_resource type="PackedScene" uid="uid://f7g4u66il53d" path="res://Scenes/Safe/safe.tscn" id="10_j7jih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u4is"]
 size = Vector2(32, 34)
@@ -80,6 +81,9 @@ offset_bottom = 71.0
 light_mask = 2
 visibility_layer = 2
 z_index = 100
+
+[node name="safe" parent="." instance=ExtResource("10_j7jih")]
+position = Vector2(1019, 329)
 
 [connection signal="dialogue_sender" from="DialogueHandler" to="Dialogue" method="_on_dialogue_handler_dialogue_sender"]
 [connection signal="item_pickup_handle" from="ItemPickupHandler" to="InventoryShowArea2D/Inventory" method="_on_item_pickup_handler_item_pickup_handle"]

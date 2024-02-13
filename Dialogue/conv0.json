@@ -8,7 +8,7 @@
 		"1": {
 			"Name": "Luke",
 			"Text": "...",
-			"Emotion": "normal"
+			"Emotion": "silent"
 		},
 		"2": {
 			"Name": "Luke",
@@ -23,7 +23,7 @@
 		"4": {
 			"Name": "Luke",
 			"Text": "...",
-			"Emotion": "normal"
+			"Emotion": "silent"
 		},
 		"5": {
 			"Name": "Luke",
@@ -38,7 +38,7 @@
 		"7": {
 			"Name": "Luke",
 			"Text": "...",
-			"Emotion": "normal"
+			"Emotion": "silent"
 		},
 		"8": {
 			"Name": "Luke",

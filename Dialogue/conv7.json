@@ -1,0 +1,10 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "I mean that it'll cost you, so go ahead and find some [color=red]money[/color].",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "-1"
+}

@@ -44,7 +44,6 @@ func _get_options() -> Dictionary:
 		return {}
 	var f = FileAccess.open(options_root + decision_code + ".json", FileAccess.READ)
 	
-	var json_info = JSON.new()
 	var options_info = JSON.parse_string(f.get_as_text())
 	
 	if typeof(options_info) == TYPE_DICTIONARY:

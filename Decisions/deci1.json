@@ -1,0 +1,17 @@
+{ 
+	"0": {
+		"Text": "I'm a bit thirsty. Can you fill it up?",
+		"Text_Code": "3",
+		"Restraint": ""
+	},
+	"1": {
+		"Text": "Gimme 'sum Dr. Sprinkle, dawg",
+		"Text_Code": "4",
+		"Restraint": ""
+	},
+	"2": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

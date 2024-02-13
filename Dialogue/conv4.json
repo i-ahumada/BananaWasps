@@ -2,9 +2,9 @@
 	"Text":{
 		"0": {
 			"Name": "Luke",
-			"Text": "Huh, a glass? what do you want with it?",
+			"Text": "Why are you talking like this? Jesus.",
 			"Emotion": "normal"
 		}
 	},
-	"Decision": "1"
+	"Decision": "-1"
 }
