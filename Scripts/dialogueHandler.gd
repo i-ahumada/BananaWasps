@@ -1,10 +1,12 @@
 extends Node
 
+signal dialogue_sender(code: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for dialogue_sender in get_children():
-		dialogue_sender.connect("dialogue", _on_dialogue, 0)
+	for dialogue_node in get_children():
+		dialogue_node.connect("dialogue", _on_dialogue, 0)
 
-func _on_dialogue(text: String):
-	print(text + " has spoken.")
+func _on_dialogue(code: String):
+	dialogue_sender.emit(code)
+	

@@ -1,0 +1,12 @@
+{ 
+	"0": {
+		"Text": "Glass",
+		"Text_Code": "2",
+		"Restraint": "Glass"
+	},
+	"1": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

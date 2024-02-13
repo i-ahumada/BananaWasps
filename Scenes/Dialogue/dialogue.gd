@@ -1,74 +1,30 @@
-extends ColorRect
+extends Control
 
-@export var dialogueKey: String
-@export var speakerSpritePath: String
-@export var textSpeed: float = 0.05
+@export var decision_scene: PackedScene
+@export var text_scene: PackedScene
 
-const spritesRoot = "res://Sprites/Dialogue/"
-const dialoguesRoot = "res://Text/conv"
-var dialogue
-var phraseNum = 0
-var finished = false
+const position_dialogues = Vector2(176, 460)
 
-# Called when the dialogue is of type text
-func handle_text():
-	if phraseNum >= len(dialogue):
-		queue_free()
-	else:
-		var strNum = str(phraseNum)
-		$Name.bbcode_text = dialogue[strNum]["Name"]
-		$Text.bbcode_text = dialogue[strNum]["Text"]
-		$Text.visible_characters = 0
-		$SpeakerSprite.texture = load(spritesRoot + dialogue[strNum]["Name"] + "_" + dialogue[strNum]["Emotion"])
-		finished = false
+var text_code: String
 
-		while $Text.visible_characters < len($Text.text):
-			$Text.visible_characters += 1
-			
-			$TimerDialogue.start()
-			await $TimerDialogue.timeout
-		
-		finished = true
-		phraseNum += 1
-
-# Called when the dialogue is of type decision
-func handle_decision():
-	pass
-
-# Runs Decision or Text
-func next_phrase() -> void:
-	pass
+func text_dialogue(dialogue_code: String):
+	if (dialogue_code != "-1"):
+		var text_instance = text_scene.instantiate()
+		text_instance.dialogue_key = dialogue_code
+		text_instance.connect("finished_text", decision_dialogue)
+		text_instance.position = position_dialogues
+		add_child(text_instance)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$TimerDialogue.wait_time = textSpeed
-	dialogue = getDialog()
-	assert(dialogue, "Dialogue not found.")
-	next_phrase()
-	get_tree().paused = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		if finished:
-			next_phrase()
-		else:
-			$Texto.visible_characters = len($Texto.text)
+func decision_dialogue(dialogue_code: String):
+	if (dialogue_code != "-1"):
+		var decision_instance = decision_scene.instantiate()
+		decision_instance.decision_code = dialogue_code
+		decision_instance.connect("finished_decision", text_dialogue)
+		decision_instance.position = position_dialogues
+		add_child(decision_instance)
 
 
-func getDialog() -> Dictionary:
-	if !FileAccess.file_exists(dialoguesRoot + dialogueKey):
-		return {}
-	var f = FileAccess.open(dialoguesRoot + dialogueKey, FileAccess.READ)
-	
-	var jsonInfo = JSON.new()
-	var dialogInfo = jsonInfo.parse_string(f.get_as_text())
-
-	if typeof(dialogInfo) == TYPE_DICTIONARY:
-		return dialogInfo
-	else:
-		return {}
-
-
-
+func _on_dialogue_handler_dialogue_sender(code):
+	text_code = code
+	text_dialogue(text_code)

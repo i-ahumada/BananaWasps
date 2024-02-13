@@ -1,0 +1,55 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "Hey, are you ready to go out?",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Luke",
+			"Text": "...",
+			"Emotion": "normal"
+		},
+		"2": {
+			"Name": "Luke",
+			"Text": "Aw man, where are my keys?",
+			"Emotion": "normal"
+		},
+		"3": {
+			"Name": "Luke",
+			"Text": "BananaWasp's is closing in 20 minutes if we don't find them, we won't be able to try their new plate",
+			"Emotion": "normal"
+		},
+		"4": {
+			"Name": "Luke",
+			"Text": "...",
+			"Emotion": "normal"
+		},
+		"5": {
+			"Name": "Luke",
+			"Text": "Hey remember how you owe me five bucks?",
+			"Emotion": "normal"
+		},
+		"6": {
+			"Name": "Luke",
+			"Text": "I'm willing to lower it to four if you get my keys.",
+			"Emotion": "normal"
+		},
+		"7": {
+			"Name": "Luke",
+			"Text": "...",
+			"Emotion": "normal"
+		},
+		"8": {
+			"Name": "Luke",
+			"Text": "Ah forgot to tell you, [i]there's a [color=red]bomb[/color].[/i]",
+			"Emotion": "normal"
+		},
+		"9": {
+			"Name": "Luke",
+			"Text": "The timer says ten, i guess minutes, no biggie though.",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "-1"
+}

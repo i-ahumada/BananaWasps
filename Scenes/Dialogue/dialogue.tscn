@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvpeipml2mj2d"]
+[gd_scene load_steps=4 format=3 uid="uid://cvpeipml2mj2d"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/dialogue.gd" id="1_kwd8d"]
+[ext_resource type="PackedScene" uid="uid://dbpigrld3aa1f" path="res://Scenes/Dialogue/decision/decisionDialogueBox.tscn" id="2_gpybn"]
+[ext_resource type="PackedScene" uid="uid://dwesrlfetltsl" path="res://Scenes/Dialogue/text/textDialogueBox.tscn" id="3_pndd2"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -9,6 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kwd8d")
+decision_scene = ExtResource("2_gpybn")
+text_scene = ExtResource("3_pndd2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -21,25 +26,3 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_right = 60
-
-[node name="DialogueContainer" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
-script = ExtResource("1_kwd8d")
-
-[node name="Name" type="RichTextLabel" parent="MarginContainer/DialogueContainer"]
-layout_mode = 0
-offset_left = 127.0
-offset_top = -2.0
-offset_right = 613.0
-offset_bottom = 40.0
-
-[node name="Text" type="RichTextLabel" parent="MarginContainer/DialogueContainer"]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 14.0
-offset_right = 957.0
-offset_bottom = 148.0
-
-[node name="SpeakerSprite" type="Sprite2D" parent="MarginContainer/DialogueContainer"]
-
-[node name="TimerDialogue" type="Timer" parent="MarginContainer/DialogueContainer"]

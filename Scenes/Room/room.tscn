@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://b0p4tnwg83q34"]
 
-[ext_resource type="Script" path="res://Scenes/Room/room.gd" id="1_a4pig"]
 [ext_resource type="PackedScene" uid="uid://c87js4tsm8wg8" path="res://Scenes/Characters/Luke/luke.tscn" id="1_sy0co"]
 [ext_resource type="Script" path="res://Scripts/dialogueHandler.gd" id="2_05is7"]
 [ext_resource type="PackedScene" uid="uid://bfdp68gtx8j6q" path="res://Scenes/Characters/Willie/willie.tscn" id="2_13rk6"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3xh5u0n6pqi0" path="res://Sprites/Items/Glass.png" id="6_uuxsi"]
 [ext_resource type="PackedScene" uid="uid://0owulfvv4b26" path="res://Scenes/Inventory/inventory.tscn" id="8_ef5g1"]
 [ext_resource type="Script" path="res://Scripts/inventoryShow.gd" id="8_rkvx0"]
+[ext_resource type="PackedScene" uid="uid://cvpeipml2mj2d" path="res://Scenes/Dialogue/dialogue.tscn" id="10_0xvxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u4is"]
 size = Vector2(32, 34)
@@ -17,7 +17,6 @@ size = Vector2(32, 34)
 size = Vector2(1030, 160)
 
 [node name="Room" type="Node2D"]
-script = ExtResource("1_a4pig")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1154.0
@@ -77,6 +76,12 @@ offset_top = -577.0
 offset_right = 576.0
 offset_bottom = 71.0
 
+[node name="Dialogue" parent="." instance=ExtResource("10_0xvxp")]
+light_mask = 2
+visibility_layer = 2
+z_index = 100
+
+[connection signal="dialogue_sender" from="DialogueHandler" to="Dialogue" method="_on_dialogue_handler_dialogue_sender"]
 [connection signal="item_pickup_handle" from="ItemPickupHandler" to="InventoryShowArea2D/Inventory" method="_on_item_pickup_handler_item_pickup_handle"]
 [connection signal="mouse_entered" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_exited"]

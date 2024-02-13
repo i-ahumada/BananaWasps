@@ -1,0 +1,10 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "What's up, found anything?",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "0"
+}

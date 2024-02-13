@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://co01ws3ja3ocg"]
+
+[ext_resource type="Script" path="res://Scenes/Dialogue/decision/decisionButton.gd" id="1_y5444"]
+
+[node name="decisionButton" type="Button"]
+offset_right = 502.0
+offset_bottom = 31.0
+text = "???"
+script = ExtResource("1_y5444")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
