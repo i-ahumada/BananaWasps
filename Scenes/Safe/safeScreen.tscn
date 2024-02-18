@@ -17,38 +17,24 @@ script = ExtResource("1_tiyax")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 1155.0
 offset_bottom = 648.0
-color = Color(0, 0, 0, 0.254902)
+color = Color(0.835294, 0.835294, 0.835294, 0.254902)
 
 [node name="backColor" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 276.0
+offset_top = 25.0
+offset_right = 876.0
+offset_bottom = 625.0
 color = Color(0.286275, 0.286275, 0.286275, 1)
 
 [node name="frontColor" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = -285.0
-offset_right = 285.0
-offset_bottom = 285.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 293.0
+offset_top = 38.0
+offset_right = 863.0
+offset_bottom = 608.0
 color = Color(0.564706, 0.564706, 0.564706, 1)
 
 [node name="Display" type="ColorRect" parent="frontColor"]
@@ -353,4 +339,5 @@ offset_right = 861.0
 offset_bottom = 72.0
 text = "X"
 
+[connection signal="show_key" from="frontColor/Display" to="." method="_on_display_show_key"]
 [connection signal="pressed" from="LeaveScreen" to="." method="_on_leave_screen_pressed"]

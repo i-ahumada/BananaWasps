@@ -1,0 +1,30 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Willie",
+			"Text": "[i]*gulp* *gulp*[/i]",
+			"Emotion": "happy"
+		},
+		"1": {
+			"Name": "Willie",
+			"Text": "Ahh, thank you.",
+			"Emotion": "happy"
+		},
+		"2": {
+			"Name": "Willie",
+			"Text": "...",
+			"Emotion": "silent"
+		},
+		"3": {
+			"Name": "Willie",
+			"Text": "Ah, the keys. Yeah they're in that safe, I saw Luke leaving them there, most likely on accident.",
+			"Emotion": "happy"
+		},
+		"4": {
+			"Name": "Willie",
+			"Text": "You will need the password though, I think it was a [color=red]woman's name[/color].",
+			"Emotion": "happy"
+		}
+	},
+	"Decision": "-1"
+}

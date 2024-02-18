@@ -1,66 +1,54 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0p4tnwg83q34"]
+[gd_scene load_steps=21 format=3 uid="uid://b0p4tnwg83q34"]
 
+[ext_resource type="Texture2D" uid="uid://dn8ueg2p1dqqd" path="res://Sprites/Fondo/Fondo_ahorasi.png" id="1_41bl4"]
 [ext_resource type="PackedScene" uid="uid://c87js4tsm8wg8" path="res://Scenes/Characters/Luke/luke.tscn" id="1_sy0co"]
 [ext_resource type="Script" path="res://Scripts/dialogueHandler.gd" id="2_05is7"]
 [ext_resource type="PackedScene" uid="uid://bfdp68gtx8j6q" path="res://Scenes/Characters/Willie/willie.tscn" id="2_13rk6"]
+[ext_resource type="Texture2D" uid="uid://ch07cbe0iiuh" path="res://Sprites/Fondo/Sofa_solo.png" id="2_ngxp7"]
+[ext_resource type="Texture2D" uid="uid://cbplfsxyiuocu" path="res://Sprites/Fondo/Books.png" id="3_j6yjk"]
 [ext_resource type="PackedScene" uid="uid://cshycae86u036" path="res://Scenes/Items/item.tscn" id="5_o62i5"]
 [ext_resource type="Script" path="res://Scripts/itemPickupHandler.gd" id="5_yxnyf"]
-[ext_resource type="Texture2D" uid="uid://3xh5u0n6pqi0" path="res://Sprites/Items/Glass.png" id="6_uuxsi"]
+[ext_resource type="Texture2D" uid="uid://bdxn7hbr840ea" path="res://Sprites/Items/Glass.png" id="6_uuxsi"]
 [ext_resource type="PackedScene" uid="uid://0owulfvv4b26" path="res://Scenes/Inventory/inventory.tscn" id="8_ef5g1"]
 [ext_resource type="Script" path="res://Scripts/inventoryShow.gd" id="8_rkvx0"]
+[ext_resource type="Texture2D" uid="uid://bjl2nohq6tx7o" path="res://Sprites/Items/Keys.png" id="9_p4lnq"]
 [ext_resource type="PackedScene" uid="uid://cvpeipml2mj2d" path="res://Scenes/Dialogue/dialogue.tscn" id="10_0xvxp"]
+[ext_resource type="Texture2D" uid="uid://dbqjwinguw1gi" path="res://Sprites/Items/Money.png" id="10_6jjpw"]
 [ext_resource type="PackedScene" uid="uid://f7g4u66il53d" path="res://Scenes/Safe/safe.tscn" id="10_j7jih"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u4is"]
-size = Vector2(32, 34)
+[ext_resource type="Texture2D" uid="uid://bnuu3r3es85s7" path="res://Sprites/Items/Gun.png" id="10_qqka1"]
+[ext_resource type="PackedScene" uid="uid://dm4o6fj62k0yw" path="res://Scenes/Safe/safeScreen.tscn" id="11_brffg"]
+[ext_resource type="AudioStream" uid="uid://dbnoynprck8po" path="res://Sounds/pickupItem.wav" id="15_f68nl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m78hd"]
 size = Vector2(1030, 160)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u4is"]
+size = Vector2(32, 34)
+
 [node name="Room" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
 offset_right = 1154.0
 offset_bottom = 648.0
+texture = ExtResource("1_41bl4")
+metadata/_edit_use_anchors_ = true
 
-[node name="DialogueHandler" type="Node" parent="."]
-script = ExtResource("2_05is7")
+[node name="Sofa" type="TextureRect" parent="."]
+z_index = 10
+texture_filter = 1
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("2_ngxp7")
 
-[node name="Luke" parent="DialogueHandler" instance=ExtResource("1_sy0co")]
-position = Vector2(193, 404)
-
-[node name="Willie" parent="DialogueHandler" instance=ExtResource("2_13rk6")]
-position = Vector2(663, 338)
-
-[node name="ItemPickupHandler" type="Node" parent="."]
-script = ExtResource("5_yxnyf")
-
-[node name="Glass" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
-position = Vector2(963, 341)
-sprite = ExtResource("6_uuxsi")
-item_name = "Glass"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Glass"]
-shape = SubResource("RectangleShape2D_8u4is")
-
-[node name="Keys" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
-position = Vector2(946, 82)
-sprite = ExtResource("6_uuxsi")
-item_name = "Keys"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Keys"]
-shape = SubResource("RectangleShape2D_8u4is")
-
-[node name="Money" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
-position = Vector2(269, 76)
-sprite = ExtResource("6_uuxsi")
-item_name = "Money"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Money"]
-shape = SubResource("RectangleShape2D_8u4is")
+[node name="Books" type="TextureRect" parent="."]
+z_index = 10
+texture_filter = 1
+offset_left = -2.0
+offset_top = 19.0
+offset_right = 1152.0
+offset_bottom = 667.0
+texture = ExtResource("3_j6yjk")
 
 [node name="InventoryShowArea2D" type="Area2D" parent="."]
 position = Vector2(575, 479)
@@ -77,15 +65,80 @@ offset_top = -577.0
 offset_right = 576.0
 offset_bottom = 71.0
 
+[node name="DialogueHandler" type="Node" parent="."]
+script = ExtResource("2_05is7")
+
+[node name="Luke" parent="DialogueHandler" instance=ExtResource("1_sy0co")]
+z_index = 20
+position = Vector2(145, 431)
+
+[node name="Willie" parent="DialogueHandler" instance=ExtResource("2_13rk6")]
+z_index = 20
+position = Vector2(723, 377)
+
+[node name="ItemPickupHandler" type="Node" parent="."]
+script = ExtResource("5_yxnyf")
+
+[node name="Glass" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
+position = Vector2(1041, 96)
+sprite = ExtResource("6_uuxsi")
+item_name = "Glass"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Glass"]
+shape = SubResource("RectangleShape2D_8u4is")
+
+[node name="Keys" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
+visible = false
+z_index = 110
+position = Vector2(1044, 350)
+sprite = ExtResource("9_p4lnq")
+item_name = "Keys"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Keys"]
+shape = SubResource("RectangleShape2D_8u4is")
+
+[node name="Money" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
+position = Vector2(726, 107)
+rotation = 1.5708
+sprite = ExtResource("10_6jjpw")
+item_name = "Money"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Money"]
+shape = SubResource("RectangleShape2D_8u4is")
+
+[node name="Gun" parent="ItemPickupHandler" instance=ExtResource("5_o62i5")]
+position = Vector2(895, 488)
+sprite = ExtResource("10_qqka1")
+item_name = "Gun"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickupHandler/Gun"]
+shape = SubResource("RectangleShape2D_8u4is")
+
 [node name="Dialogue" parent="." instance=ExtResource("10_0xvxp")]
 light_mask = 2
 visibility_layer = 2
 z_index = 100
+metadata/_edit_use_anchors_ = true
 
 [node name="safe" parent="." instance=ExtResource("10_j7jih")]
-position = Vector2(1019, 329)
+position = Vector2(1038, 344)
 
-[connection signal="dialogue_sender" from="DialogueHandler" to="Dialogue" method="_on_dialogue_handler_dialogue_sender"]
-[connection signal="item_pickup_handle" from="ItemPickupHandler" to="InventoryShowArea2D/Inventory" method="_on_item_pickup_handler_item_pickup_handle"]
+[node name="safeScreen" parent="safe" instance=ExtResource("11_brffg")]
+visible = false
+offset_left = -1038.0
+offset_top = -344.0
+offset_right = -1038.0
+offset_bottom = -344.0
+
+[node name="PickupItemSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_f68nl")
+
 [connection signal="mouse_entered" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="InventoryShowArea2D" to="InventoryShowArea2D" method="_on_mouse_exited"]
+[connection signal="dialogue_sender" from="DialogueHandler" to="Dialogue" method="_on_dialogue_handler_dialogue_sender"]
+[connection signal="item_pickup_handle" from="ItemPickupHandler" to="InventoryShowArea2D/Inventory" method="_on_item_pickup_handler_item_pickup_handle"]
+[connection signal="safe_opened" from="safe/safeScreen" to="safe" method="_on_safe_screen_safe_opened"]

@@ -1,5 +1,7 @@
 extends ColorRect
 
+signal show_key
+
 const MAX_LETTERS = 5
 const PASSWORD = "SUSAN"
 const GREEN = Color(0,1,0,1)
@@ -24,14 +26,15 @@ func handle_letters(letter: String):
 		amount_letters_displayed += 1
 		letter_labels[amount_letters_displayed - 1].text = letter
 		displayed_text += letter
-	elif letter == "<":
-		letter_labels[amount_letters_displayed - 1].text = "-"
+	elif letter == "<" and amount_letters_displayed > 0:
+		letter_labels[amount_letters_displayed - 1].text = "_"
 		displayed_text = displayed_text.substr(0, displayed_text.length() - 1)
 		print(displayed_text)
 		amount_letters_displayed -= 1
 	elif letter == "Ok":
 		if (PASSWORD == displayed_text):
-			blink_color(GREEN)
+			await blink_color(GREEN)
+			show_key.emit()
 		else:
 			blink_color(RED)
 

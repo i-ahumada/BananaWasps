@@ -1,0 +1,17 @@
+{
+	"1": {
+		"Text": "Shoot.",
+		"Text_Code": "20",
+		"Restraint": ""
+	},
+	"2": {
+		"Text": "Pardon his life.",
+		"Text_Code": "21",
+		"Restraint": ""
+	},
+	"3": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

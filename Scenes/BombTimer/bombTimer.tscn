@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8bvjhf0wkgji"]
+
+[ext_resource type="Script" path="res://Scenes/BombTimer/bombTimer.gd" id="1_j22gu"]
+
+[node name="BombTimer" type="Control"]
+process_mode = 3
+z_index = 30
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j22gu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 574.0
+offset_right = 177.0
+offset_bottom = 648.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+metadata/_edit_group_ = true
+
+[node name="Minutes" type="Label" parent="ColorRect"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 15.0
+offset_top = 4.0
+offset_right = 69.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 45
+text = "10"
+
+[node name="Dots" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 1.0
+offset_right = 92.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 45
+text = ":"
+
+[node name="Seconds" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 4.0
+offset_right = 157.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 45
+text = "00"

@@ -1,12 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwesrlfetltsl"]
+[gd_scene load_steps=16 format=3 uid="uid://dwesrlfetltsl"]
 
 [ext_resource type="Script" path="res://Scenes/Dialogue/text/textDialogueBox.gd" id="1_1d6jq"]
 [ext_resource type="Texture2D" uid="uid://bdvk8jlwl40vj" path="res://Sprites/UI/dialogueBoxUI.png" id="1_nngik"]
 [ext_resource type="Texture2D" uid="uid://rl2jtdlermnv" path="res://Sprites/Characters/Luke/Luke_normal_1.png" id="2_tuuy6"]
+[ext_resource type="Texture2D" uid="uid://dv58eyi3g8bt3" path="res://Sprites/Characters/Luke/Luke_crying_1.png" id="3_dppl4"]
 [ext_resource type="Texture2D" uid="uid://cjuss1bg6npgl" path="res://Sprites/Characters/Luke/Luke_normal_2.png" id="3_v6ab4"]
+[ext_resource type="Texture2D" uid="uid://dl7n0tqx5vd81" path="res://Sprites/Characters/Luke/Luke_crying_2.png" id="4_ij85h"]
+[ext_resource type="Texture2D" uid="uid://barc8fbm8t5x6" path="res://Sprites/Characters/Willie/Willie_normal_1.png" id="7_2m2gj"]
+[ext_resource type="Texture2D" uid="uid://7u6fxpsvq6o" path="res://Sprites/Characters/Luke/Luke_shocked.png" id="7_abt6r"]
+[ext_resource type="Texture2D" uid="uid://bw5d0uf0vyx" path="res://Sprites/Characters/Willie/Willie_normal_2.png" id="8_cnpbv"]
+[ext_resource type="Texture2D" uid="uid://dsaa1oag8p15k" path="res://Sprites/Characters/Willie/Willie_happy_1.png" id="9_36ckj"]
+[ext_resource type="Texture2D" uid="uid://bcw8qgev2keif" path="res://Sprites/Characters/Willie/Willie_happy_2.png" id="10_wauie"]
+[ext_resource type="Texture2D" uid="uid://di3njiwyyxurm" path="res://Sprites/Characters/Willie/Willie_shocked.png" id="11_m2jco"]
+[ext_resource type="AudioStream" uid="uid://cnboqlg2x55gn" path="res://Sounds/letterAppear.wav" id="13_er0kw"]
+[ext_resource type="AudioStream" uid="uid://c4tgoqm4l3tyk" path="res://Sounds/letterAppearB.wav" id="14_snkai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wy6pe"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dppl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ij85h")
+}],
+"loop": true,
+"name": &"Luke_crying",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_tuuy6")
@@ -20,11 +41,57 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_abt6r")
+}],
+"loop": true,
+"name": &"Luke_shocked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_tuuy6")
 }],
 "loop": true,
 "name": &"Luke_silent",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_36ckj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wauie")
+}],
+"loop": true,
+"name": &"Willie_happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2m2gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cnpbv")
+}],
+"loop": true,
+"name": &"Willie_normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_m2jco")
+}],
+"loop": true,
+"name": &"Willie_shocked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2m2gj")
+}],
+"loop": true,
+"name": &"Willie_silent",
+"speed": 5.0
 }]
 
 [node name="TextDialogueBox" type="TextureRect"]
@@ -33,9 +100,18 @@ texture_filter = 1
 offset_left = 176.0
 offset_top = -202.0
 offset_right = 976.0
-offset_bottom = -43.0
+offset_bottom = -32.0
 texture = ExtResource("1_nngik")
 script = ExtResource("1_1d6jq")
+
+[node name="background" type="ColorRect" parent="."]
+z_index = -20
+layout_mode = 0
+offset_left = -275.0
+offset_top = -553.0
+offset_right = 1073.0
+offset_bottom = 260.0
+color = Color(0.835294, 0.835294, 0.835294, 0.254902)
 
 [node name="Name" type="RichTextLabel" parent="."]
 texture_filter = 2
@@ -57,7 +133,7 @@ anchor_right = 0.012
 offset_left = 25.4
 offset_top = 66.0
 offset_right = 763.4
-offset_bottom = 186.0
+offset_bottom = 154.0
 theme_override_colors/default_color = Color(0.152941, 0.152941, 0.152941, 1)
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 30
@@ -76,4 +152,12 @@ texture_filter = 1
 position = Vector2(412, -144)
 scale = Vector2(6.52344, 6.52344)
 sprite_frames = SubResource("SpriteFrames_wy6pe")
-animation = &"Luke_normal"
+animation = &"Luke_shocked"
+
+[node name="letterAppear" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_er0kw")
+volume_db = -6.0
+
+[node name="letterAppearB" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_snkai")
+volume_db = -6.0

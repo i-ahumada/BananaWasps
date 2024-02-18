@@ -1,0 +1,15 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Luke",
+			"Text": "Hey you found them, nice!",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Luke",
+			"Text": "Let's get going.",
+			"Emotion": "normal"
+		} 
+	},
+	"Decision": "-1"
+}

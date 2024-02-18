@@ -1,0 +1,25 @@
+{
+	"Text":{
+		"0": {
+			"Name": "Willie",
+			"Text": "So what?",
+			"Emotion": "normal"
+		},
+		"1": {
+			"Name": "Willie",
+			"Text": "Ah, you want to know.",
+			"Emotion": "normal"
+		},
+		"2": {
+			"Name": "Willie",
+			"Text": "I'll tell you no problem.",
+			"Emotion": "normal"
+		},
+		"3": {
+			"Name": "Willie",
+			"Text": "Just bring me a [color=red]glass[/color] and [color=red]water[/color]. It's so hot in here my memory is fuzzy.",
+			"Emotion": "normal"
+		}
+	},
+	"Decision": "-1"
+}

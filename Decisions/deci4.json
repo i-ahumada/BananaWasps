@@ -1,0 +1,17 @@
+{
+	"1": {
+		"Text": "So?",
+		"Text_Code": "14",
+		"Restraint": ""
+	},
+	"2": {
+		"Text": "May I please know, my lord and saviour Willie",
+		"Text_Code": "13",
+		"Restraint": ""
+	},
+	"3": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

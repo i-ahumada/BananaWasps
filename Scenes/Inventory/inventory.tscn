@@ -40,7 +40,7 @@ expand_mode = 2
 [node name="itemContainer" type="HBoxContainer" parent="MarginContainer/TextureRect"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 17.0
+offset_top = 37.0
 offset_right = 733.0
 offset_bottom = 112.0
 alignment = 1

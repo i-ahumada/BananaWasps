@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c87js4tsm8wg8"]
+[gd_scene load_steps=5 format=3 uid="uid://c87js4tsm8wg8"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Luke/luke.gd" id="1_35q06"]
 [ext_resource type="Script" path="res://Scripts/clickable.gd" id="1_giiuj"]
+[ext_resource type="Texture2D" uid="uid://m8cjp82yamv6" path="res://Sprites/Characters/Luke/Luke_standing.png" id="3_gvmxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfhcg"]
-size = Vector2(118, 347.5)
+size = Vector2(146, 512.75)
 
 [node name="Luke" type="Node2D"]
 script = ExtResource("1_35q06")
@@ -13,9 +14,14 @@ script = ExtResource("1_35q06")
 script = ExtResource("1_giiuj")
 
 [node name="ClickZone" type="CollisionShape2D" parent="ClickableArea"]
+position = Vector2(2, -82.625)
 shape = SubResource("RectangleShape2D_yfhcg")
 
 [node name="Sprite2D" type="Sprite2D" parent="ClickableArea"]
+texture_filter = 1
+position = Vector2(8, -96)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_gvmxj")
 
 [connection signal="area_clicked" from="ClickableArea" to="." method="_on_clickable_area_area_clicked"]
 [connection signal="mouse_entered" from="ClickableArea" to="ClickableArea" method="_on_mouse_entered"]

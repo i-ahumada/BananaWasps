@@ -5,5 +5,12 @@ extends ClickableArea2D
 
 
 func _on_area_clicked():
-	var safe_screen_instance = safe_screen_scene.instantiate()
-	get_parent().get_parent().add_child(safe_screen_instance)
+	get_tree().paused = true
+	
+	$safeScreen.visible = true
+
+
+func _on_safe_screen_safe_opened():
+	$CollisionShape2D.disabled = true
+	$Sprite2D.texture = load("res://Sprites/Safe/Safe_opened.png")
+	get_node("/root/Room/ItemPickupHandler/Keys").visible = true

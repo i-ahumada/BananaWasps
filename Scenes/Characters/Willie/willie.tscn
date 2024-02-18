@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdp68gtx8j6q"]
+[gd_scene load_steps=5 format=3 uid="uid://bfdp68gtx8j6q"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Willie/willie.gd" id="1_lk6ba"]
 [ext_resource type="Script" path="res://Scripts/clickable.gd" id="1_yys5l"]
+[ext_resource type="Texture2D" uid="uid://cby4hx656oub6" path="res://Sprites/Characters/Willie/Willie_sitting.png" id="3_kviqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej4pk"]
-size = Vector2(316, 347.5)
+size = Vector2(292, 430.75)
 
 [node name="Willie" type="Node2D"]
 script = ExtResource("1_lk6ba")
@@ -13,10 +14,15 @@ script = ExtResource("1_lk6ba")
 script = ExtResource("1_yys5l")
 
 [node name="ClickZone" type="CollisionShape2D" parent="ClickableArea"]
+position = Vector2(-10, -41.625)
 shape = SubResource("RectangleShape2D_ej4pk")
 debug_color = Color(0.658824, 0.513726, 0, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="ClickableArea"]
+texture_filter = 1
+position = Vector2(24, -45)
+scale = Vector2(5.62695, 5.62695)
+texture = ExtResource("3_kviqm")
 
 [connection signal="area_clicked" from="ClickableArea" to="." method="_on_clickable_area_area_clicked"]
 [connection signal="mouse_entered" from="ClickableArea" to="ClickableArea" method="_on_mouse_entered"]

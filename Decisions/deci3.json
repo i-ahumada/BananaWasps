@@ -1,0 +1,22 @@
+{
+	"0": {
+		"Text": "Here have some water.",
+		"Text_Code": "15",
+		"Restraint": "Water"
+	},
+	"1": {
+		"Text": "Do you know where Luke key's are?",
+		"Text_Code": "12",
+		"Restraint": ""
+	},
+	"2": {
+		"Text": "Gun?",
+		"Text_Code": "17",
+		"Restraint": "Gun"
+	},
+	"3": {
+		"Text": "Close",
+		"Text_Code": "-1",
+		"Restraint": ""
+	}
+}

@@ -47,7 +47,12 @@
 		},
 		"9": {
 			"Name": "Luke",
-			"Text": "The timer says ten, i guess minutes, no biggie though.",
+			"Text": "It's been there since yesterday, but it didn't start beeping until today. So annoying, just blow up already jeez.",
+			"Emotion": "normal"
+		},
+		"10": {
+			"Name": "Luke",
+			"Text": "The timer says three and a half, i guess minutes, no biggie though.",
 			"Emotion": "normal"
 		}
 	},

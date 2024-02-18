@@ -1,7 +1,7 @@
 extends TextureRect
 
 @export var dialogue_key: String
-@export var text_speed: float = 0.05
+@export var text_speed: float = 0.03
 
 signal finished_text(decision_code: String)
 
@@ -21,6 +21,23 @@ func next_phrase() -> void:
 			finished_text.emit(decision_code)
 		else:
 			get_tree().paused = false
+		if dialogue_key == "0":
+			var bombTimer = load("res://Scenes/BombTimer/bombTimer.tscn").instantiate()
+			get_node("/root/Room").add_child(bombTimer)
+		elif dialogue_key == "5":
+			get_node("/root/Room/InventoryShowArea2D/Inventory").set_items("Water")
+		elif dialogue_key == "10":
+			global.ending = 0
+			get_tree().change_scene_to_file("res://Scenes/Endscreen/endscreen.tscn")
+		elif dialogue_key == "18":
+			global.ending = 2
+			get_node("/root/Room/DialogueHandler/Luke").set_is_alive(false)
+		elif dialogue_key == "20":
+			global.ending = 2
+			get_node("/root/Room/DialogueHandler/Willie").set_is_alive(false)
+		elif dialogue_key == "9" or dialogue_key == "8":
+			global.ending = 2
+			get_tree().change_scene_to_file("res://Scenes/Endscreen/endscreen.tscn")
 		queue_free()
 	else:
 		var str_num = str(phrase_num)
@@ -29,10 +46,14 @@ func next_phrase() -> void:
 		$Text.visible_characters = 0
 		$SpeakerSprite.play(text_dialogue[str_num]["Name"] + "_" + text_dialogue[str_num]["Emotion"])
 		finished = false
-
+		var playedA = false
 		while $Text.visible_characters < len($Text.text):
 			$Text.visible_characters += 1
-			
+			if playedA:
+				$letterAppearB.play()
+			else:
+				$letterAppear.play()
+			playedA = !playedA
 			$TimerDialogue.start(text_speed)
 			await $TimerDialogue.timeout
 		
